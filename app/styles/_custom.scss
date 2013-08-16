@@ -1,0 +1,29 @@
+@import "compass/css3";
+
+.navbar-inner {
+  background-color: #e66;
+  background-image: none;
+  a.brand {
+    color: white;
+    text-shadow: none;
+  }
+}
+
+.search {
+  margin-top: 80px;
+  h3 {
+    color: #666;
+  }
+}
+
+.verse {
+  margin-top: 80px;
+}
+
+.select2-container {
+  display: block !important;
+}
+
+.loading {
+  color: #666;
+}
