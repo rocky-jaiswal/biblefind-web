@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "compass/css3/transform";
 
 .navbar-inner {
   background-color: #e66;
@@ -26,4 +27,24 @@
 
 .loading {
   color: #666;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes $name { @content }
+  @-moz-keyframes $name { @content }
+  @-o-keyframes $name { @content }
+  @keyframes $name { @content }
+}
+
+@mixin animation($value) {
+  @include experimental(animation, $value, -webkit, -moz, -ms, -o, official);
+}
+
+@include keyframes(spin) {
+  100% { @include rotateZ(360deg); }
+}
+
+.icon-refresh {
+  display: inline-block;
+  @include animation(spin 1.2s infinite);
 }
