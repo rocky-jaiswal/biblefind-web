@@ -1,0 +1,51 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="#/">Biblefind</a>
+    </div>
+  </div>
+</div>
+
+<div class="search">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="loading" ng-show="isLoading">
+        <i class="icon-refresh"></i>&nbsp;Loading...
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <div class="span4">
+          <h3>Book</h3>
+          <select ui-select2="" ng-model="selectedBook">
+            <option ng-repeat="book in books" value="{{book}}">{{book}}</option>
+          </select>
+        </div>
+        <div class="span4">
+          <h3>Chapter</h3>
+          <select ui-select2="" ng-model="selectedChapter">
+            <option ng-repeat="chapter in chapters" value="{{chapter}}">{{chapter}}</option>
+          </select>
+        </div>
+        <div class="span4">
+          <h3>Verse</h3>
+          <select ui-select2="" ng-model="selectedVerse">
+            <option ng-repeat="verse in verses" value="{{verse}}">{{verse}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="verse well">
+  <div class="row-fluid">
+    <div class="span12">
+      <p>{{verseText}}</p>
+      <a class="btn btn-small" href="" ng-click="prevVerse()" ng-hide="selectedVerse=='1'"><i class="icon-chevron-left"></i>Prev</a>
+      <a class="btn btn-small" href="" ng-click="nextVerse()" ng-hide="selectedVerse==verses.length">Next<i class="icon-chevron-right"></i></a>
+    </div>
+  </div>
+</div>
